@@ -9,10 +9,10 @@ using namespace std::chrono;
 
 int main() {
     Graph g1;
-    g1.generateGraph(600, "graph600.txt");
-    std::cout << "Graph generated and saved to graph.txt." << std::endl;
+    /*g1.generateGraph(50, "graph50.txt");
+    std::cout << "Graph generated and saved to graph.txt." << std::endl;*/
 
-    g1.loadFromFile("graph600.txt");
+    g1.loadFromFile("graph500.txt");
     cout << "Coloring of graph 1 using Greedy algorithm:\n";
     auto startGreedy = high_resolution_clock::now();
     g1.greedyColoring();
@@ -51,7 +51,12 @@ int main() {
     cout << endl;
     cout << "\nTime taken by Genetic algorithm: " << durationGenetic.count() << " microseconds" << endl;
 
-    
+    cout << "\nColoring of graph 1 using DSatur algorithm:\n";
+    auto startDSatur = high_resolution_clock::now();
+    g1.DSatur();
+    auto endDSatur = high_resolution_clock::now();
+    auto durationDSatur = duration_cast<microseconds>(endDSatur - startDSatur);
+    cout << "\nTime taken by DSatur algorithm: " << durationDSatur.count() << " microseconds" << endl;
 
     
 

@@ -28,7 +28,7 @@ public:
     int getV() const {
         return V;
     }
-    
+    void printTotalColorsUsed(const vector<int>& colors);
     //Greedy
     void greedyColoring();
     //BruteForce
@@ -38,6 +38,8 @@ public:
     vector<int> geneticColoring(int numColors, int populationSize, int numGenerations);
     static void generateGraph(int numVertices, const std::string& filename);
     void loadFromFile(const std::string& filename);
+
+    /*void DSatur();*/
 };
 
 //Graph.cpp
